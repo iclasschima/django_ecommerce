@@ -16,3 +16,12 @@ class Customer(models.Model):
     username = models.CharField(max_length=20)
     password = models.CharField(max_length=20)
 
+
+class Product(models.Model):
+    name = models.CharField(max_length=20)
+    category = models.ForeignKey(Cotegory)
+    price = models.IntegerField(max_length=20)
+    description = models.CharField(max_length=200)
+    brand = models.CharField(max_length=20)
+    ratings = models.IntegerField(max_length=20)
+    quantity = models.IntegerField()
