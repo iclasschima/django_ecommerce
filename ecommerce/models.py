@@ -16,3 +16,6 @@ class Customer(models.Model):
     username = models.CharField(max_length=20)
     password = models.CharField(max_length=20)
 
+
+class Category(models.Model):
+    caterory_name = models.CharField(max_length=100)
