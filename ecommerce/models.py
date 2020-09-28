@@ -25,12 +25,13 @@ class Customer(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=20)
-    category = models.ForeignKey(Category)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     price = models.IntegerField(max_length=20)
     description = models.CharField(max_length=200)
     brand = models.CharField(max_length=20)
     ratings = models.IntegerField(max_length=20)
     quantity = models.IntegerField()
+
     image = models.ImageField(null=True, blank=True)
 
     def __str__(self):
@@ -42,19 +43,6 @@ class Category(models.Model):
 
     def __str__(self):
         return self.category_name
-
-
-class Order(models.Model):
-    order_name = models.IntegerField(max_length=20)
-    product_id = models.ForeignKey(Product)
-    customer_id = models.ForeignKey(Customer)
-    delivered = models.CharField(max_length=20)
-    order_number = models.IntegerField()
-    paid = models.CharField(max_length=20)
-    payment_id = models.ForeignKey(Payment)
-
-    def __str__(self):
-        return self.order_name
 
 
 class Payment(models.Model):
@@ -69,4 +57,14 @@ class Payment(models.Model):
         return self.card_number
 
 
+class Order(models.Model):
+    order_name = models.IntegerField(max_length=20)
+    product_id = models.ForeignKey(Product)
+    customer_id = models.ForeignKey(Customer)
+    delivered = models.CharField(max_length=20)
+    order_number = models.IntegerField()
+    paid = models.CharField(max_length=20)
+    payment_id = models.ForeignKey(Payment, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.order_name
