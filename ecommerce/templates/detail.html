@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <!-- CSS only -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://cdn.materialdesignicons.com/5.6.55/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+        body {
+          font-family: ubuntu;
+          background-color: #F9FAFB;
+          font-size: 14px;
+         margin: 0;
+         padding: 0;
+        }
+        nav li {
+          margin: 0 10px;
+        }
+
+        .banner p {
+          color: #fff;
+          font-size: 40px;
+        }
+
+        .banner {
+            {% comment %} height: 70vh; {% endcomment %}
+           background-color: #0056b3;
+           {% comment %} background: url('../../static/images/bag.jpg')  no-repeat center center; {% endcomment %}
+           {% comment %} background-size: cover; {% endcomment %}
+        }
+
+        .img {
+          height: 16rem;
+          border: 1px solid #eee;
+          margin: 13px;
+          margin-bottom: 0;
+        }
+
+        img {
+          height: 100%;
+        }
+
+        ul {
+          list-style-type: none;
+          border-radius: 3px;
+          padding-bottom: 0;
+        }
+
+        .sidebar ul {
+          background-color: #fff;
+          border: 1px solid rgba(0,0,0,.125);
+          box-shadow: 0 0 10px 0 rgba(183, 192, 206, .2);
+          height: 15rem;
+          width: 80%;
+          margin: 0 auto;
+        }
+
+        .sidebar i {
+          font-size: 20px
+        }
+
+        .card {
+           box-shadow: 0 0 10px 0 rgba(183, 192, 206, .2);
+        }
+
+          img {
+              width: 100%;
+          }
+
+      #dexcription {
+          font-size: 20px;
+          {% comment %} margin-bottom: 0px; {% endcomment %}
+      }
+``
+      small {
+          font-size: 13px;
+          color: #243A7B
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark px-lg-5">
+      <a class="navbar-brand" href="/">LubiClass</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Best Deals</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Popular Deals</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Today's Deals</a>
+          </li>
+
+          <li class="nav-item" data-toggle="modal" data-target="#login">
+            <a class="nav-link" href="#">Sign In</a>
+          </li>
+
+          <li class="nav-item" data-toggle="modal" data-target="#register">
+            <a class="nav-link" href="#">Sign Up</a>
+          </li>
+
+          {% comment %}
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="mdi mdi-cart"> </i> </a>
+          </li>
+          {% endcomment %}
+        </ul>
+      </div>
+    </nav>
+    <div
+      class="modal fade"
+      id="login"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h6 class="modal-title" id="exampleModalLabel">
+              Welcome Back! Sign In
+            </h6>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form autocomplete="off">
+              <div class="form-group">
+                <label>Email Address</label>
+                <input class="form-control" type="text" />
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input class="form-control" type="password" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-xs btn-secondary">
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="register"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h6 class="modal-title" id="exampleModalLabel">Hello! Sign Up</h6>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form autocomplete="off">
+              <div class="form-group">
+                <label>Firstname</label>
+                <input class="form-control" type="text" />
+              </div>
+              <div class="form-group">
+                <label>Lastname</label>
+                <input class="form-control" type="text" />
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input class="form-control" type="text" />
+              </div>
+              <div class="form-group">
+                <label>Mobile Number</label>
+                <input class="form-control" type="number" />
+              </div>
+              <div class="form-group">
+                <label>Username</label>
+                <input class="form-control" type="text" />
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input class="form-control" type="password" />
+              </div>
+            </form>
+            <p>
+              I already have an account.
+              <a
+                style="cursor: pointer; color: blue"
+                data-dismiss="modal"
+                data-toggle="modal"
+                data-target="#login"
+                >Sign in</a
+              >
+            </p>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-xs btn-secondary">
+              Sign up
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container pt-5">
+      <div class="row">
+        <div class="col-lg-5">
+          <img src="../../static/images/{{product.image}}" />
+        </div>
+        <div class="col-lg-7">
+          <small>Product Name</small>
+          <h1 class="mt-0 mb-4">{{ product.name }}</h1>
+
+          <small>Product Description</small>
+          <p id="dexcription">{{product.description}}</p>
+
+          <small>Product Brand</small>
+          <p id="dexcription">{{product.brand}}</p>
+
+          <small>Product Price</small>
+          <p id="dexcription">₦{{product.price}}</p>
+
+          <small>Available Quantity</small>
+          <p id="dexcription">{{product.quantity}}</p>
+
+          <small>Ratings</small>
+          <p id="dexcription">
+            {% if product.ratings == 5 %} {% for i in '55555' %}
+            <i class="mdi-star mdi"></i>
+            {% endfor %} 
+                
+             {% elif product.ratings == 4 %} {% for i in '4444' %}
+            <i class="mdi-star mdi"></i>
+            {% endfor %}
+             {% elif product.ratings == 3 %} {% for i in '333' %}
+            <i class="mdi-star mdi"></i>
+            {% endfor %}
+            {% elif product.ratings == 2 %} {% for i in '22' %}
+            <i class="mdi-star mdi"></i>
+            {% endfor %}
+             {% elif product.ratings == 1 %} {% for i in '1' %}
+            <i class="mdi-star mdi"></i>
+            {% endfor %} {% endif %}
+
+          </p>
+
+          <button class="col-4 btn btn-primary">Add to cart</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
